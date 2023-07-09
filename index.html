@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Blog</title>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Blog</h1>
+  </header>
+  
+  <main>
+    <section>
+      <h2>Create a New Blog Post</h2>
+      <form>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+        
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" rows="10" cols="50" required></textarea><br><br>
+        
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image"><br><br>
+        
+        <label for="video">Video:</label>
+        <input type="file" id="video" name="video"><br><br>
+        
+        <input type="submit" value="Publish">
+      </form>
+    </section>
+    
+    <section>
+      <h2>Recent Blog Posts</h2>
+      <article>
+        <h3>Sample Blog Post Title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet blandit justo, sed tincidunt mauris. Sed et nisl eros. Phasellus quis ligula ac justo vehicula dignissim. Donec et ipsum est.</p>
+        <img src="https://www.kapwing.com/resources/content/images/2019/07/How-to-Start-a-Blog.jpg" alt="Sample Image">
+       
+      </article>
+      
+      <article>
+        <h3>Another Blog Post Title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet blandit justo, sed tincidunt mauris. Sed et nisl eros. Phasellus quis ligula ac justo vehicula dignissim. Donec et ipsum est.</p>
+        <img src="https://www.amuratech.com/uploads/blog_post/thumbnail/124/_01__thumb_image_-_02_W_Covid_19_blog.jpg" alt="Sample Image 2">
+        
+      </article>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 My Blog. All rights reserved.</p>
+  </footer>
+  <script>
+    // JavaScript code for dynamic functionality
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const title = document.getElementById('title').value;
+      const content = document.getElementById('content').value;
+
+      // You can implement logic here to handle form submission and create a new blog post dynamically
+      const newPost = document.createElement('article');
+      newPost.innerHTML = `
+        <h3>${title}</h3>
+        <p>${content}</p>
+      `;
+
+      const recentPostsSection = document.querySelector('section:nth-child(2)');
+      recentPostsSection.appendChild(newPost);
+
+      // Clear form fields after submission
+      form.reset();
+    });
+  </script>
+  </script>
+</body>
+</html>
