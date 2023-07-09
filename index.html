@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>My Blog</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" href="javascipt.js></script>
 </head>
 <body>
   <header>
@@ -49,29 +51,5 @@
   <footer>
     <p>&copy; 2023 My Blog. All rights reserved.</p>
   </footer>
-  <script>
-    // JavaScript code for dynamic functionality
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const title = document.getElementById('title').value;
-      const content = document.getElementById('content').value;
-
-      // You can implement logic here to handle form submission and create a new blog post dynamically
-      const newPost = document.createElement('article');
-      newPost.innerHTML = `
-        <h3>${title}</h3>
-        <p>${content}</p>
-      `;
-
-      const recentPostsSection = document.querySelector('section:nth-child(2)');
-      recentPostsSection.appendChild(newPost);
-
-      // Clear form fields after submission
-      form.reset();
-    });
-  </script>
-  </script>
 </body>
 </html>
